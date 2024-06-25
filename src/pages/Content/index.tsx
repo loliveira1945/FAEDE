@@ -18,15 +18,15 @@ export default function Content() {
           <Card 
             srcImage={image02} 
             altImage='Tela de um notebook fazendo compras online' 
-            className={`h-1/6 w-1/4 mt-16 ml-[-3rem] rounded-lg sm:w-full sm:ml-0`} />
+            className={`h-1/6 w-1/4 mt-16 ml-[-3rem] rounded-lg sm:w-full sm:ml-0 sm:mt-0`} />
           <Card 
             srcImage={image03} 
             altImage='Entregador organizando caixas de encomendas no automóvel' 
-            className={`h-1/6 w-1/4 mb-16 ml-[-3rem] rounded-lg sm:w-full sm:ml-0`}/>
+            className={`h-1/6 w-1/4 mb-16 ml-[-3rem] rounded-lg sm:w-full sm:ml-0 sm:mt-16`}/>
           <Card 
             srcImage={image04} 
             altImage='Depósito com caixas de encomendas empilhadas' 
-            className={`h-1/6 w-1/4 mt-16 ml-[-3rem] rounded-lg sm:w-full sm:ml-0`}/>
+            className={`h-1/6 w-1/4 mt-16 ml-[-3rem] rounded-lg sm:w-full sm:ml-0 sm:mt-0`}/>
         </div>
       </div>
     )
