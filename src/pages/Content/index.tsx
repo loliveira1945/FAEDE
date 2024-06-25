@@ -9,7 +9,7 @@ import image04 from '../../images/image04.jpg'
 export default function Content() {
     return (
       <div className='flex flex-col items-center justify-center flex-wrap h-auto p-6'>
-        <Title>Venha fazer parte da nossa história!</Title>
+        <Title>Come be part of our history!</Title>
         <div className="flex flex-row items-center h-auto justify-center sm:flex-col sm:w-full">
           <Card 
             srcImage={image01} 
