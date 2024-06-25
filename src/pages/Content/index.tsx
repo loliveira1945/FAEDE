@@ -10,23 +10,23 @@ export default function Content() {
     return (
       <div className='flex flex-col items-center justify-center flex-wrap h-auto p-6'>
         <Title>Venha fazer parte da nossa história!</Title>
-        <div className="flex flex-row flex-wrap items-center h-auto justify-center">
+        <div className="flex flex-row items-center h-auto justify-center sm:flex-col sm:w-full">
           <Card 
             srcImage={image01} 
-            altImage='Caixas de produtos dentro de um caminhão' 
-            className={`h-1/6 w-1/4 mb-16 ml-[-3rem] rounded-lg`}/>
+            altImage='Cachorro ao lado de caixas de encomenda' 
+            className={`h-1/6 w-1/4 mb-16 ml-[-3rem] rounded-lg sm:w-full sm:ml-0`}/>
           <Card 
             srcImage={image02} 
-            altImage='Entregador de moto levando encomenda' 
-            className={`h-1/6 w-1/4 mt-16 ml-[-3rem] rounded-lg`} />
+            altImage='Tela de um notebook fazendo compras online' 
+            className={`h-1/6 w-1/4 mt-16 ml-[-3rem] rounded-lg sm:w-full sm:ml-0`} />
           <Card 
             srcImage={image03} 
-            altImage='Van na rodovia' 
-            className={`h-1/6 w-1/4 mb-16 ml-[-3rem] rounded-lg`}/>
+            altImage='Entregador organizando caixas de encomendas no automóvel' 
+            className={`h-1/6 w-1/4 mb-16 ml-[-3rem] rounded-lg sm:w-full sm:ml-0`}/>
           <Card 
             srcImage={image04} 
-            altImage='Van na rodovia' 
-            className={`h-1/6 w-1/4 mt-16 ml-[-3rem] rounded-lg`}/>
+            altImage='Depósito com caixas de encomendas empilhadas' 
+            className={`h-1/6 w-1/4 mt-16 ml-[-3rem] rounded-lg sm:w-full sm:ml-0`}/>
         </div>
       </div>
     )

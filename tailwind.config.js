@@ -11,7 +11,7 @@ module.exports = {
         customColorPurple: '#8b81ff',
       },
       screens: {
-        'sm': '640px',
+        'sm': {'max': '516px'},
         'md': '768px',
         'lg': '1024px',
         'xl': '1280px',
