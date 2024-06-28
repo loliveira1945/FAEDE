@@ -9,6 +9,7 @@ module.exports = {
       colors: {
         customColorBlue: '#130e4a',
         customColorPurple: '#8b81ff',
+        customColorGreen: '#166534',
       },
       screens: {
         'sm': {'max': '516px'},
