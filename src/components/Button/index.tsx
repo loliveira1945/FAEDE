@@ -9,7 +9,7 @@ type BotaoProps = {
     onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
-const buttonStyles = 'w-1/4 m-6 p-3 rounded-lg font-bold whitespace-nowrap border border-customColorPurple transition-colors duration-300 ease-in-out hover:bg-customColorPurple hover:bg-gradient-to-l hover:from-transparent hover:via-transparent hover:to-customColorPurple';
+const buttonStyles = 'w-auto m-6 p-3 sm:m-2 rounded-lg font-bold whitespace-nowrap border border-customColorPurple transition-colors duration-300 ease-in-out hover:bg-customColorPurple hover:bg-gradient-to-l hover:from-transparent hover:via-transparent hover:to-customColorPurple';
 
 export default function Button({ typeButton = "button", children, routeButton, className = buttonStyles }: BotaoProps) {
   const history = useNavigate();
