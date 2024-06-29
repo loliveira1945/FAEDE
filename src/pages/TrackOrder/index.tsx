@@ -26,6 +26,8 @@ export default function TrackOrder() {
             .then(result => {
                 if (result && result.status === "Success") {
                     setData(result.data);
+                } else if (result && result.erro === 'true' && data.tracking === 'NC792526735BR') {
+                    setError("Erro específico para NC792526735BR");
                 } else {
                     setError("Não foi possível rastrear a encomenda. Verifique o código de rastreamento.");
                 }
@@ -42,6 +44,7 @@ export default function TrackOrder() {
             <form
                 onSubmit={submitHandler}
                 className='flex flex-col items-center flex-wrap p-6'>
+                <p className="font-sm italic text-customColorBlueTwo">To test, use the code: NC792526735BR</p>
                 <Input 
                     name="tracking"
                     obrigatorio={true}
