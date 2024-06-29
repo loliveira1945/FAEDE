@@ -158,8 +158,6 @@ export default function Forms() {
     })
     
     //limpar form ao enviar
-
-
     setPhone('')
     setZipCode('')
     setState('')
