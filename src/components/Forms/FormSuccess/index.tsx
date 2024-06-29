@@ -11,7 +11,7 @@ const noticeStyles = `${successStyles} w-auto`;
 
 export default function FormSuccess({ name, email }: FormSuccessProps) {
 
-  return <>
+  return (
     <div className={successStyles}>
       <p>
         {`Hello `}
@@ -21,12 +21,12 @@ export default function FormSuccess({ name, email }: FormSuccessProps) {
         {`We will contact you shortly to resolve your case via email: `}
         <strong>{`${email}. `}</strong>
         {`Due to the pandemic, our deadline is 3 business days.`}
-        <div className={noticeStyles}>
+        <span className={noticeStyles}>
           <strong>{`Thank you for understanding!`}</strong>
           <strong>{`He cares for himself 😷😄`}</strong>
-        </div>
+        </span>
       </p>
         <Button typeButton="button" className={buttonSuccessStyles} routeButton='/'>To Start</Button>
     </div>
-  </>
+  )
 }

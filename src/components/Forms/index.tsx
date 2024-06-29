@@ -297,15 +297,15 @@ export default function Forms() {
           {showQuestionError && <FieldError show>Field Question is mandatory</FieldError>}
         </FieldStyled>
 
-          <Button
-            typeButton="submit"
-            onClick={handleButtonClick}>
-              To Send
-          </Button>
+        <Button
+          typeButton="submit"
+          onClick={handleButtonClick}>
+            To Send
+        </Button>
       </form>)}
 
       {showSuccessMessage && (
-          <FormSuccess name={name} email={email} />
+        <FormSuccess name={name} email={email} />
       )}
     </>
   );

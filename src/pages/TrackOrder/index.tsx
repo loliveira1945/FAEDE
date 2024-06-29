@@ -40,11 +40,23 @@ export default function TrackOrder() {
 
     return (
         <>
-            <Title>Enter your code below to track your order:</Title>
+            <div className="flex flex-col items-center flex-wrap">
+                <Title>Enter your code below to track your order:</Title>
+                <div className="w-1/3 sm:w-4/5 p-3 my-4 rounded-lg flex flex-col items-start text-yellow-700 border border-yellow-200 bg-yellow-200">
+                    <p>
+                        ⚠️ The postal API, for tracking parcels, is no longer available for free, 
+                        there are other free alternatives, but we are pending responses for permission. 
+                        To simulate a successful search, install and enable the 
+                        <a href="https://chromewebstore.google.com/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?pli=1" target="_blank" rel="noreferrer">
+                            <strong> Allow CORS Chrome extension </strong>
+                        </a>
+                        and use the code: <strong>NC792526735BR</strong>
+                    </p>
+                </div>
+            </div>
             <form
                 onSubmit={submitHandler}
                 className='flex flex-col items-center flex-wrap p-6'>
-                <p className="font-sm italic text-customColorBlueTwo">To test, use the code: NC792526735BR</p>
                 <Input 
                     name="tracking"
                     obrigatorio={true}
@@ -53,7 +65,7 @@ export default function TrackOrder() {
                 <img className="mb-6 rounded-lg border border-customColorBlue" src={captchaUrl} alt="Captcha" />
                 <Input 
                     name="captcha"
-                    obrigatorio={false}
+                    obrigatorio={true}
                     className={orderCodeStyle}
                     placeholder="Type your captcha" />
                 <Button
