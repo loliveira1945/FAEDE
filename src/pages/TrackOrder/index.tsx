@@ -47,7 +47,7 @@ export default function TrackOrder() {
                     obrigatorio={true}
                     className={orderCodeStyle}
                     placeholder="Type your code" />
-                <img className="mb-4 rounded-lg border border-customColorBlue" src={captchaUrl} alt="Captcha" />
+                <img className="mb-6 rounded-lg border border-customColorBlue" src={captchaUrl} alt="Captcha" />
                 <Input 
                     name="captcha"
                     obrigatorio={false}
