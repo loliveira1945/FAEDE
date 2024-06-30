@@ -5,7 +5,7 @@ type FormSuccessProps = {
     email: string;
 };
 
-const successStyles = 'flex flex-col items-center h-auto w-1/2 p-3 text-green-800 rounded-lg border border-green-50 bg-green-50';
+const successStyles = 'flex flex-col items-center h-auto w-1/2 sm:w-full p-3 text-green-800 rounded-lg border border-green-50 bg-green-50';
 const buttonSuccessStyles = 'w-auto m-2 p-3 rounded-lg font-bold whitespace-nowrap border border-customColorGreen transition-colors duration-300 ease-in-out hover:bg-customColorGreen hover:bg-gradient-to-l hover:from-transparent hover:via-transparent hover:to-customColorGreen hover:text-green-50';
 const noticeStyles = `${successStyles} w-auto`;
 

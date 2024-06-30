@@ -220,7 +220,6 @@ export default function Forms() {
             typeField="tel"
             placeholder="Enter your phone number" />
           {showPhoneError && <FieldError show>Field Phone Number is mandatory</FieldError>}
-          
         </FieldStyled>
 
         <AddressStyled>
