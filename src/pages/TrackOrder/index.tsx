@@ -19,21 +19,28 @@ export default function TrackOrder() {
 
         const formData = new FormData(evento.target as HTMLFormElement);
         const data = Object.fromEntries(formData.entries());
+        const trackingCode = data.tracking as string;
 
-        fetch(`https://rastreamento.correios.com.br/app/resultado.php?objeto=${data.tracking}&captcha=${data.captcha}&mqs=S`)
-        // fetch(`https://www.linkcorreios.com.br/?id=${data.tracking}`)
+        setError(null);
+
+        fetch(`https://api.linketrack.com/track/json?user=lucasalves1945@icloud.com&token=f8a05c89fd111fab6f3b7c40c1dbbe2322fb287edd47795e153daac51776613a&codigo=${trackingCode}`)
             .then(response => response.json())
             .then(result => {
-                if (result && result.status === "Success") {
-                    setData(result.data);
-                } else if (result && result.erro === 'true' && data.tracking === 'NC792526735BR') {
-                    setError("Erro específico para NC792526735BR");
+                // console.log('API Result:', result);
+
+                if (result && result.eventos) {
+                    setData(result.eventos.map((evento: any) => ({
+                        data: evento.data,
+                        hora: evento.hora,
+                        local: evento.local,
+                        status: evento.status
+                    })));
                 } else {
-                    setError("Não foi possível rastrear a encomenda. Verifique o código de rastreamento.");
+                    setError("Tracking failed. Please check the code and try again.");
                 }
             })
             .catch(err => {
-                console.log(err);
+                console.error('Fetch error:', err);
                 setError("Ocorreu um erro ao rastrear a encomenda.");
             });
     };
@@ -42,7 +49,7 @@ export default function TrackOrder() {
         <>
             <div className="flex flex-col items-center flex-wrap">
                 <Title>Enter your code below to track your order:</Title>
-                <div className="w-1/3 sm:w-4/5 p-3 my-4 rounded-lg flex flex-col items-start text-yellow-700 border border-yellow-200 bg-yellow-200">
+                {/* <div className="w-1/3 sm:w-4/5 p-3 my-4 rounded-lg flex flex-col items-start text-yellow-700 border border-yellow-200 bg-yellow-200">
                     <p>
                         ⚠️ The postal API, for tracking parcels, is no longer available for free, 
                         there are other free alternatives, but we are pending responses for permission. 
@@ -52,7 +59,7 @@ export default function TrackOrder() {
                         </a>
                         and use the code: <strong>NC792526735BR</strong>
                     </p>
-                </div>
+                </div> */}
             </div>
             <form
                 onSubmit={submitHandler}
@@ -69,12 +76,11 @@ export default function TrackOrder() {
                     className={orderCodeStyle}
                     placeholder="Type your captcha" />
                 <Button
-                typeButton="submit">
-                Search Order
-            </Button>
+                    typeButton="submit">
+                    Search Order
+                </Button>
+                <TrackingResult trackingData={data} error={error}/>
             </form>
-
-            <TrackingResult trackingData={data} error={error}/>
         </>
     )
   }
