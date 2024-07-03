@@ -44,6 +44,7 @@ export default function TrackingResult({ trackingData, error }: TrackingResultPr
             </li>
           </ul>
         </div>
+        <p className="text-xs">API disponibilizada por <a href="https://linketrack.com/" target="_blank" rel="noreferrer">linketrack.com</a></p>
       </>
     );
   }
